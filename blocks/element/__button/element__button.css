@@ -1,0 +1,12 @@
+.element__button {
+    background-color: #FFFFFF;
+    border: none;
+    padding: 5px 5px 0 0;
+    cursor: pointer;
+}
+
+
+.element__button:hover {
+    opacity: 0.6;
+
+}
