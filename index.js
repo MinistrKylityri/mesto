@@ -1,5 +1,5 @@
 const EditLink = document.querySelector(".profile__add-button-link");
-const PopupEdit = document.querySelector(".popup__edit");
+const PopupEdit = document.querySelector(".popup");
 const PopupEditClose = PopupEdit.querySelector(".popup__close");
 const nameInput = PopupEdit.querySelector(".popup__input_type_name");
 const PopupSubmit = PopupEdit.querySelector(".popup__submit");
@@ -12,8 +12,7 @@ EditLink.addEventListener("click", () => {
     console.log("click");
     PopupEdit.classList.add("popup_open");
     nameInput.value = ProfileName.textContent;
-    JobInput.value = ProfileJob.textContent;
-
+    JobInput.value = ProfileJob.textContent
 });
 
 PopupEditClose.addEventListener("click", () => {
