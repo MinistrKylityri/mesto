@@ -9,11 +9,3 @@
     white-space: nowrap;
     overflow: hidden;
 }
-
-@media (max-width: 767px) {
-    .element__name {
-        font-size: 24px;
-        line-height: 29px;
-
-    }
-}

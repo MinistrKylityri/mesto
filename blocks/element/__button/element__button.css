@@ -1,8 +1,15 @@
 .element__button {
     background-color: #FFFFFF;
     border: none;
-    padding: 5px 5px 0 0;
+    margin: 5px 5px 0 0;
     cursor: pointer;
+    background-image: url(../../../images/Group.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+    width: 22px;
+    height: 19px;
+
 }
 
 
