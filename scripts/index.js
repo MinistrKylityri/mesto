@@ -1,5 +1,5 @@
 const editLink = document.querySelector('.profile__edit-button');
-const popupEdit = document.querySelector('.popup__edit');
+const popupEdit = document.querySelector('.popup_edit');
 const popupEditClose = popupEdit.querySelector('.popup__close');
 const nameInput = popupEdit.querySelector('.popup__input_type_name');
 const popupEditForm = popupEdit.querySelector('.popup__form');
@@ -8,7 +8,7 @@ const profileJob = document.querySelector('.profile__job');
 const jobInput = popupEdit.querySelector('.popup__input_type_job');
 
 const addLink = document.querySelector('.profile__add-button');
-const popupAdd = document.querySelector('.popup__add');
+const popupAdd = document.querySelector('.popup_add');
 const popupAddClose = popupAdd.querySelector('.popup__close');
 
 const profileLocation = document.querySelector('.element__name');
@@ -16,12 +16,12 @@ const profileLink = document.querySelector('.element__img');
 
 const cardTemplate = document.getElementById('card-template');
 const cardGrid = document.querySelector('.elements');
-const editCardPopup = document.querySelector('.popup__add');
+const editCardPopup = document.querySelector('.popup_add');
 const editCardButton = document.querySelector('.popup__form_add-card');
 
 // Создание функции для карточек
 
-const popupImg = document.querySelector('.popup__img');      //Попап нажатия на карточку
+const popupImg = document.querySelector('.popup_img');      //Попап нажатия на карточку
 const elementImg = document.querySelector('.element__img');
 const popupImgClose = popupImg.querySelector('.popup__close');
 const nameImg = popupImg.querySelector('.popup__title-img');
