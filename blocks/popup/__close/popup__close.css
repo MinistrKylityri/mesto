@@ -10,6 +10,8 @@
     background-position: center;
     box-sizing: border-box;
     background-size: contain;
+    background-color: transparent;
+    border: none;
 
 }
 
