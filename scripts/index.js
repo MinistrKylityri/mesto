@@ -14,8 +14,6 @@ const popupAddClose = popupAdd.querySelector('.popup__close');
 const profileLocation = document.querySelector('.element__name');
 const profileLink = document.querySelector('.element__img');
 
-
-
 const cardTemplate = document.getElementById('card-template');
 const cardGrid = document.querySelector('.elements');
 const editCardPopup = document.querySelector('.popup__add');
@@ -28,7 +26,6 @@ const elementImg = document.querySelector('.element__img');
 const popupImgClose = popupImg.querySelector('.popup__close');
 const nameImg = popupImg.querySelector('.popup__title-img');
 const srcImg = popupImg.querySelector('.popup__element-img');
-
 
 
 const createCardElement = (cardDate) => {
@@ -87,8 +84,6 @@ function openPopup(item) {
     item.classList.add('popup_open')
 }
 
-
-
 addLink.addEventListener('click', () => {
     openPopup(popupAdd);
 
@@ -115,7 +110,6 @@ const handleCardSubmit = (event) => {             //Функция добавл�
     };
     renderCardElement(createCardElement(cardAdd));
     closePopup(popupAdd);
-
 }
 
 editCardButton.addEventListener('submit', handleCardSubmit);       //Кнопка добавления
@@ -138,7 +132,6 @@ popupEditForm.addEventListener('submit', (event) => {           //Редакти
     profileJob.textContent = job;
     closePopup(popupEdit);
 });
-
 
 popupImgClose.addEventListener('click', () => {
     closePopup(popupImg);
