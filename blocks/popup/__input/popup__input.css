@@ -7,4 +7,9 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
+    box-sizing: border-box;
+}
+
+.popup__input:focus {
+    border: 2px solid blue;
 }

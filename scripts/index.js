@@ -74,27 +74,46 @@ const createCardElement = (cardData) => {
 
 const renderCardElement = (cardElement) => {         //Создание карточек
     cardGrid.prepend(cardElement);
-}
+};
 
 initialCards.forEach((card) => {
     renderCardElement(createCardElement(card));
-})
+});
 
 
 //Функция открытия попапа
 function closePopup(item) {
-    item.classList.remove('popup_open')
-}
+    item.classList.remove('popup_open');
+    document.removeEventListener('keydown', keyCloseEsc);
+    item.removeEventListener('mousedown', CloseOverlay);
+};
 
 //Функция закрытия попапа
 function openPopup(item) {
-    item.classList.add('popup_open')
+    item.classList.add('popup_open');
+    document.addEventListener('keydown', keyCloseEsc);
+    document.addEventListener('mousedown', CloseOverlay);
 }
 
 addLink.addEventListener('click', () => {
     openPopup(popupAdd);
 
 });
+
+//Закрытие на esc
+function keyCloseEsc(evt) {
+    if (evt.key === 'Escape') {
+        const EscapeClose = document.querySelector('.popup_open');
+        closePopup(EscapeClose);
+    }
+};
+//Закрытие кликом
+function CloseOverlay(evt) {
+    const CloseOver = document.querySelector('.popup_open');
+    if (evt.target === CloseOver) {
+        closePopup(CloseOver);
+    }
+};
 
 
 const handleCardSubmit = (event) => {             //Функция добавления карточки
@@ -111,7 +130,7 @@ const handleCardSubmit = (event) => {             //Функция добавл�
     closePopup(popupAdd);
     locationInput.value = '';
     linkInput.value = '';
-}
+};
 
 editCardButton.addEventListener('submit', handleCardSubmit);       //Кнопка добавления
 
