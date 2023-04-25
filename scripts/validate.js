@@ -36,6 +36,7 @@ function toggleButtonValidity(config, form) {
         disableButton(config, submitButton);
 
     }
+
 }
 //неактивная кнопка
 function disableButton(config, button) {
@@ -65,7 +66,6 @@ function enableValidation(config) {
         })
 
     });
-
 }
 
 enableValidation({

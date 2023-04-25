@@ -1,3 +1,4 @@
+
 const editLink = document.querySelector('.profile__edit-button');
 const popupEdit = document.querySelector('.popup_edit');
 const nameInput = popupEdit.querySelector('.popup__input_type_name');
@@ -130,9 +131,13 @@ const handleCardSubmit = (event) => {             //Функция добавл�
     closePopup(popupAdd);
     locationInput.value = '';
     linkInput.value = '';
+    editCardButton.addEventListener('submit', (e) => {
+        e.preventDefault();
+        editCardButton.reset();
+    })
 };
 
-editCardButton.addEventListener('submit', handleCardSubmit);       //Кнопка добавления
+editCardButton.addEventListener('submit', handleCardSubmit,);       //Кнопка добавления
 
 editLink.addEventListener('click', () => {
     openPopup(popupEdit);
