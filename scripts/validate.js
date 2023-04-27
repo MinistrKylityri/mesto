@@ -32,6 +32,7 @@ function toggleButtonValidity(config, form) {
 
     if (form.checkValidity()) {
         enableButton(config, submitButton);
+
     } else {
         disableButton(config, submitButton);
 

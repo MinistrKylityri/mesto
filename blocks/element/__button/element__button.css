@@ -6,6 +6,7 @@
     background-image: url(../../../images/Group.svg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
     box-sizing: border-box;
     width: 22px;
     height: 19px;

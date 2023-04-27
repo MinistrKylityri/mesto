@@ -1,4 +1,3 @@
-
 const editLink = document.querySelector('.profile__edit-button');
 const popupEdit = document.querySelector('.popup_edit');
 const nameInput = popupEdit.querySelector('.popup__input_type_name');
@@ -74,6 +73,7 @@ const createCardElement = (cardData) => {
 };
 
 const renderCardElement = (cardElement) => {         //Создание карточек
+
     cardGrid.prepend(cardElement);
 };
 
@@ -81,19 +81,18 @@ initialCards.forEach((card) => {
     renderCardElement(createCardElement(card));
 });
 
-
-//Функция открытия попапа
+//Функция закрытия попапа
 function closePopup(item) {
     item.classList.remove('popup_open');
     document.removeEventListener('keydown', keyCloseEsc);
     item.removeEventListener('mousedown', CloseOverlay);
 };
 
-//Функция закрытия попапа
+//Функция открытия попапа
 function openPopup(item) {
     item.classList.add('popup_open');
     document.addEventListener('keydown', keyCloseEsc);
-    document.addEventListener('mousedown', CloseOverlay);
+    item.addEventListener('mousedown', CloseOverlay);
 }
 
 addLink.addEventListener('click', () => {
@@ -116,7 +115,6 @@ function CloseOverlay(evt) {
     }
 };
 
-
 const handleCardSubmit = (event) => {             //Функция добавления карточки
     event.preventDefault();
 
@@ -129,15 +127,13 @@ const handleCardSubmit = (event) => {             //Функция добавл�
     };
     renderCardElement(createCardElement(cardAdd));
     closePopup(popupAdd);
-    locationInput.value = '';
-    linkInput.value = '';
-    editCardButton.addEventListener('submit', (e) => {
-        e.preventDefault();
-        editCardButton.reset();
-    })
+    event.target.reset();
+    event.submitter.classList.add('popup__submit_disabled');
+    event.submitter.disabled = true;
 };
 
-editCardButton.addEventListener('submit', handleCardSubmit,);       //Кнопка добавления
+//Кнопка добавления
+editCardButton.addEventListener('submit', handleCardSubmit);
 
 editLink.addEventListener('click', () => {
     openPopup(popupEdit);
@@ -153,5 +149,3 @@ popupEditForm.addEventListener('submit', (event) => {           //Редакти
     profileJob.textContent = job;
     closePopup(popupEdit);
 });
-
-

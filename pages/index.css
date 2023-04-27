@@ -38,7 +38,7 @@
 @import url(../blocks/popup/__add-button/popup__add-button.css);
 @import url(../blocks/popup/__input/popup__input_invalid.css);
 
-
+@import url(../blocks/popup/popup_img.css);
 @import url(../blocks/popup/__content-img/popup__content-img.css);
 @import url(../blocks/popup/__title-img/popup__title-img.css);
 @import url(../blocks/popup/__element-img/popup__element-img.css);
