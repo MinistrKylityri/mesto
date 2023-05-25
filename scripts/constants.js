@@ -24,3 +24,14 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
+
+const config = {
+    formSelector: '.form__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__submit',
+    inactiveButtonClass: 'popup__submit_disabled',
+    inputErrorClass: 'popup__input_invalid',
+    errorClass: 'error-message_active'
+};
+
+export { initialCards, config }
