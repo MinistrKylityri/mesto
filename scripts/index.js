@@ -21,15 +21,15 @@ const nameImg = popupImg.querySelector('.popup__title-img');
 const srcImg = popupImg.querySelector('.popup__element-img');
 const closeButtons = document.querySelectorAll('.popup__close');
 
+
 function createNewCard(item) {
-    const cardTemplate = new Card(item, 'card-template', cardElement);
-    const cardNew = cardTemplate.createCard();
-    return cardNew;
+    const cardTemplate = new Card(item, '#card-template', showPopupImage);
+    return cardTemplate.createCard();
 }
 
 //Создание карточек
-const renderCardElement = (cardElement) => {
-    cardGrid.prepend(cardElement);
+const renderCardElement = (showPopupImage) => {
+    cardGrid.prepend(showPopupImage);
 };
 
 initialCards.forEach((item) => {
@@ -48,18 +48,17 @@ const handleCardSubmit = (event) => {
     renderCardElement(createNewCard(cardAdd));
     closePopup(popupAdd);
     event.target.reset();
-    event.submitter.classList.add('popup__submit_disabled');
-    event.submitter.disabled = true;
+    popupAddFormValidator.resetValidation();
 };
 
 //Функция открытия попапа
 function openPopup(item) {
     item.classList.add('popup_open');
     document.addEventListener('keydown', keyCloseEsc);
-    item.addEventListener('mousedown', CloseOverlay);
+    item.addEventListener('mousedown', closePopupByOverlayClick);
 }
 
-function cardElement(name, link) {
+function showPopupImage(name, link) {
     srcImg.src = link;
     srcImg.alt = name;
     nameImg.textContent = name;
@@ -71,7 +70,7 @@ function cardElement(name, link) {
 function closePopup(item) {
     item.classList.remove('popup_open');
     document.removeEventListener('keydown', keyCloseEsc);
-    item.removeEventListener('mousedown', CloseOverlay);
+    item.removeEventListener('mousedown', closePopupByOverlayClick);
 };
 
 //Закрытие на esc
@@ -82,10 +81,10 @@ function keyCloseEsc(evt) {
     }
 };
 //Закрытие кликом
-function CloseOverlay(evt) {
-    const CloseOver = document.querySelector('.popup_open');
-    if (evt.target === CloseOver) {
-        closePopup(CloseOver);
+function closePopupByOverlayClick(evt) {
+    const closeOver = document.querySelector('.popup_open');
+    if (evt.target === closeOver) {
+        closePopup(closeOver);
     }
 };
 
@@ -104,7 +103,7 @@ function openEditPopup() {
 
 //вешаем событие на кнопку редактирования профиля
 editLink.addEventListener('click', () => {
-    popupEditFormValidator.hideError();
+    popupEditFormValidator.resetValidation();
     openEditPopup();
 });
 
