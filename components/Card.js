@@ -3,7 +3,7 @@
 export default class Card {
 
     constructor(card, cardTemplate, showPopupImage) {
-        this._name = card.name;
+        this._title = card.title;
         this._link = card.link;
         this._cardTemplate = cardTemplate;
         this._showPopupImage = showPopupImage;
@@ -14,6 +14,7 @@ export default class Card {
         this._buttonDelete = this._element.querySelector('.element__delete');
 
     }
+
 
     _getTemplate() {
         const cardElement = document.querySelector(this._cardTemplate).content.querySelector('.element').cloneNode(true);
@@ -37,15 +38,18 @@ export default class Card {
         //слушатель клика для смены состояния кнопки лайка
         this._buttonLike.addEventListener('click', this._handlelike);
         //слушатель клика для открытия попапа просмотра карточки
-        this._cardImage.addEventListener('click', () => { this._showPopupImage(this._name, this._link) });
-    };
+        this._cardImage.addEventListener('click', () => {
+            this._showPopupImage({ title: this._title, link: this._link });
+        });
+    }
+
 
     createCard() {
-        this._cardName.textContent = this._name;
+        this._cardName.textContent = this._title;
         this._cardImage.src = this._link;
-        this._cardImage.alt = this._name;
+        this._cardImage.alt = this._title;
         this._setEventListeners();
         return this._element;
     }
 
-};
+}

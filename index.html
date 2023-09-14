@@ -50,9 +50,9 @@
       <div role="button" class="popup__close"></div>
       <h2 class="popup__title">Новое место</h2>
       <form id="form_add" class="popup__form popup__form_add-card" name="form" novalidate>
-        <input id="location" class="popup__input popup__input_type_location" name="location" placeholder="Название"
-          required minlength="2" maxlength="30" autocomplete="off">
-        <span id="error-location" class="error-message error-message_active"></span>
+        <input id="title" class="popup__input popup__input_type_title" name="title" placeholder="Название" required
+          minlength="2" maxlength="30" autocomplete="off">
+        <span id="error-title" class="error-message error-message_active"></span>
         <input id="link" class="popup__input popup__input_type_link" name="link" placeholder="Ссылка на картинку"
           required type="url">
         <span id="error-link" class="error-message error-message_active"></span>
@@ -65,7 +65,7 @@
     <figure class="popup__content-img">
       <button type="button" class="popup__close"></button>
       <img class="popup__element-img" name="link" src="#" alt="">
-      <figure class="popup__title-img" name="name"></figure>
+      <figure class="popup__title-img" name="title"></figure>
     </figure>
   </section>
   <template id="card-template">
@@ -78,7 +78,7 @@
       </div>
     </article>
   </template>
-  <script type="module" src="./scripts/index.js"></script>
+  <script type="module" src="./pages/index.js"></script>
 </body>
 
 </html>
