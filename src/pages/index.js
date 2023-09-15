@@ -1,10 +1,10 @@
-import { initialCards, config } from '../scripts/constants.js';
-import Card from "../components/Card.js";
-import FormValidator from "../components/FormValidator.js";
-import Section from '../components/Section.js';
-import PopupWithForm from '../components/PopupWithForm.js';
-import PopupWithImage from '../components/PopupWithImage.js';
-import UserInfo from '../components/UserInfo.js';
+import { initialCards, config } from '../scripts/utils/constants.js';
+import Card from "../scripts/components/Card.js";
+import FormValidator from "../scripts/components/FormValidator.js";
+import Section from '../scripts/components/Section.js';
+import PopupWithForm from '../scripts/components/PopupWithForm.js';
+import PopupWithImage from '../scripts/components/PopupWithImage.js';
+import UserInfo from '../scripts/components/UserInfo.js';
 
 
 
