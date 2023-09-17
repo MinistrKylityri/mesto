@@ -7,8 +7,6 @@ import PopupWithForm from '../scripts/components/PopupWithForm.js';
 import PopupWithImage from '../scripts/components/PopupWithImage.js';
 import UserInfo from '../scripts/components/UserInfo.js';
 
-
-
 const editLink = document.querySelector('.profile__edit-button');
 const addLink = document.querySelector('.profile__add-button');
 const editCardButton = document.querySelector('.popup__form_edit');
@@ -38,21 +36,18 @@ const section = new Section({
     items: initialCards,
     renderer: createNewCard
 }, cardGrid);
-
-section.renderCardElement();
+section.renderItems();
 
 // Попап Профиля
-const popupProfile = new PopupWithForm(PopupProfileSelector, (evt) => {
-    evt.preventDefault();
-    userInfo.setUserInfo(popupProfile.getInputsValues())
+const popupProfile = new PopupWithForm(PopupProfileSelector, (item) => {
+    userInfo.setUserInfo(item)
     popupProfile.close();
 })
 popupProfile.setEventListeners();
 
 // Попап добавления карточки
-const popupAddCard = new PopupWithForm(popupAddSelector, (evt) => {
-    evt.preventDefault();
-    section.addItem(createNewCard(popupAddCard.getInputsValues()));
+const popupAddCard = new PopupWithForm(popupAddSelector, (item) => {
+    section.addItem(createNewCard(item));
     popupAddCard.close();
 })
 popupAddCard.setEventListeners();

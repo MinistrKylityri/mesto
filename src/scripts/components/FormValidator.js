@@ -6,7 +6,6 @@ export default class FormValidator {
         this.popupSubmitButton = this.form.querySelector(config.submitButtonSelector);//кнопка
     };
 
-
     //показываем сообщение об ошибки
     _showInputError(input) {
         const errorElement = this.form.querySelector(`#error-${input.id}`)

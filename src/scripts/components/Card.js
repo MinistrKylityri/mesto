@@ -15,12 +15,10 @@ export default class Card {
 
     }
 
-
     _getTemplate() {
         const cardElement = document.querySelector(this._cardTemplate).content.querySelector('.element').cloneNode(true);
         return cardElement;
     }
-
 
     _handleDelete = () => {
         this._element.remove();
@@ -30,7 +28,6 @@ export default class Card {
     _handlelike = () => {
         this._buttonLike.classList.toggle('element__button_active')
     };
-
 
     _setEventListeners() {
         //слушатель клика для удаления карточки
@@ -43,7 +40,6 @@ export default class Card {
         });
     }
 
-
     createCard() {
         this._cardName.textContent = this._title;
         this._cardImage.src = this._link;
@@ -51,5 +47,4 @@ export default class Card {
         this._setEventListeners();
         return this._element;
     }
-
 }
