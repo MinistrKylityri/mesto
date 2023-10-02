@@ -45,3 +45,7 @@
 
 @import url(../blocks/error-message/error-message.css);
 @import url(../blocks/error-message/error-message_hidden.css);
+
+@import url(../blocks/profile/__avatar-button/profile__avatar-button.css);
+@import url(../blocks/element/__counter/element__counter.css);
+@import url(../blocks/element/__card-like/element__card-like.css)
