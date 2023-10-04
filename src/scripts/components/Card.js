@@ -1,10 +1,10 @@
 
 
 export default class Card {
-    constructor(card, cardTemplate, showPopupImage, openDelete, changeLike) {
+    constructor(card, cardTemplate, showPopupImage, openDelete, changeLike, userId) {
         this._title = card.name;
         this._link = card.link;
-        this._myId = card.myid;
+        this._myId = userId;
         this._ownerId = card.owner._id;
         this._cardTemplate = cardTemplate;
         this._showPopupImage = showPopupImage;
@@ -44,6 +44,10 @@ export default class Card {
         this._changeLike(this._buttonLike, this._cardId)
 
     };
+
+    isLiked() {
+        this._buttonLike.classList.contains('element__button_active');
+    }
 
     toggleLike(likes) {
         this._buttonLike.classList.toggle('element__button_active');

@@ -65,9 +65,6 @@ export default class FormValidator {
                 this._toggleButtonValidity();
             });
         });
-        this.form.addEventListener('submit', (event) => {
-            event.target.reset();
-        })
     };
 
     //Подключение валидации

@@ -5,7 +5,7 @@ export default class Popup {
     }
 
     //Закрытие на esc
-    _keyCloseEsc = (evt) => {
+    _handleEscape = (evt) => {
         if (evt.key === 'Escape') {
             this.close();
         }
@@ -29,13 +29,13 @@ export default class Popup {
 
     open() {
         this._popupElement.classList.add('popup_open');
-        document.addEventListener('keydown', this._keyCloseEsc);
+        document.addEventListener('keydown', this._handleEscape);
 
     }
 
     close() {
         this._popupElement.classList.remove('popup_open');
-        document.removeEventListener('keydown', this._keyCloseEsc);
+        document.removeEventListener('keydown', this._handleEscape);
 
     }
 
