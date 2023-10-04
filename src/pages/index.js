@@ -46,9 +46,6 @@ function createNewCard(item) {
         if (isLiked) {
             api.deleteLike(cardId)
                 .then(res => {
-                    console.log(isLiked)
-                    console.log(res.likes)
-                    console.log(toggleLike)
                     cardTemplate.toggleLike(res.likes)
                 })
                 .catch((error => console.log(`Ошибка при добавлении лайка ${error}`)))

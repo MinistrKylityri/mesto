@@ -41,12 +41,12 @@ export default class Card {
     }
 
     _handlelike = () => {
-        this._changeLike(this._buttonLike, this._cardId)
+        this._changeLike(this.isLiked(), this._cardId)
 
     };
 
     isLiked() {
-        this._buttonLike.classList.contains('element__button_active');
+        return this._buttonLike.classList.contains('element__button_active');
     }
 
     toggleLike(likes) {
